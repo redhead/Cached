@@ -1,0 +1,20 @@
+{
+    "name": "redhead/cached",
+    "description": "A Kdyby\\Aop aspect for caching method return values",
+    "authors": [
+        {
+            "name": "Radek Ježdík"
+        }
+    ],
+    "require": {
+        "nette/nette": "@dev",
+        "kdyby/aop": "@dev"
+    },
+	"require-dev": {
+        "nette/tester": "@dev",
+		"redhead/mockyll": "@dev"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
