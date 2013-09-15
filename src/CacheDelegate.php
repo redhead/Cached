@@ -8,7 +8,7 @@ use Nette\Caching\IStorage;
 /**
  * Class that delegates calls to a <code>\Nette\Caching\Cache</code> instance.
  *
- * @author Radek Ježdík <jezdik.radek@gmail.com>
+ * @author Radek Ježdík
  */
 class CacheDelegate {
 

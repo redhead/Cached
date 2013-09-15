@@ -7,11 +7,9 @@ use Nette\DI\Compiler;
 use Nette\DI\CompilerExtension;
 
 /**
- * Description of CachedExtension
- *
- * @author Radek Ježdík <jezdik.radek@gmail.com>
+ * @author Radek Ježdík
  */
-class CachableExtension extends CompilerExtension {
+class CachedExtension extends CompilerExtension {
 
 
 	public function loadConfiguration() {
@@ -28,7 +26,7 @@ class CachableExtension extends CompilerExtension {
 		}
 
 		$this->getContainerBuilder()->addDefinition($this->prefix('cacheProfile'))
-				->setClass('CacheProfileImpl', array('profiles' => $profiles), $enabled);
+				->setClass('Cached\CacheProfileImpl', array('profiles' => $profiles), $enabled);
 	}
 
 

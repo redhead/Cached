@@ -8,7 +8,7 @@ use Kdyby\Aop;
 /**
  * The caching aspect that does all the hard work - caching.
  *
- * @author Radek Ježdík <jezdik.radek@gmail.com>
+ * @author Radek Ježdík
  */
 class CachingAspect {
 

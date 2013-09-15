@@ -5,9 +5,9 @@ namespace Cached;
 use Nette\Caching\Cache;
 
 /**
- * Holds profiles and creates
+ * Holds profiles and creates options from the profiles and the given annotation.
  *
- * @author Radek Ježdík <jezdik.radek@gmail.com>
+ * @author Radek Ježdík
  * @internal
  */
 class CacheProfileImpl implements ICacheProfile {

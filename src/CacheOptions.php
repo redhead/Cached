@@ -5,7 +5,7 @@ namespace Cached;
 /**
  * The data container for cache options.
  *
- * @author Radek Ježdík <jezdik.radek@gmail.com>
+ * @author Radek Ježdík
  *
  * @property-read string $namespace the cache namespace
  * @property-read bool $enabled true if caching is enabled
