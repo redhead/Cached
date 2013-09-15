@@ -1,6 +1,6 @@
 Cached
 ======
-An Nette framework extension providing a Kdyby\Aop aspect for caching method return values.
+A Nette framework extension providing a Kdyby\Aop aspect for caching method return values.
 
 Install
 -------
@@ -14,7 +14,7 @@ In you Nette application configuration, add the extension to be registeres and t
 
 ```
 extensions:
-		cachable: Cached\CachedExtension
+		cached: Cached\CachedExtension
 		
 aspects:
   - Cached\CachingAspect(@cacheStorage)
