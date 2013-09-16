@@ -24,7 +24,7 @@ aspects:
 ```
 
 where @cacheStorage is a reference to a service implementing Nette\Caching\IStorage
-(you can specify your own storage, or remove the argument so the dependecy will by autowired)
+(you can specify your own storage, or remove the argument so the dependecy will be autowired)
 
 
 
