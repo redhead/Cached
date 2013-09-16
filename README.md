@@ -2,15 +2,18 @@ Cached
 ======
 A Nette framework extension providing a Kdyby\Aop aspect for caching method return values.
 
-Install
--------
+Installation
+------------
+
+First, [install the Kdyby\Aop extension](https://github.com/Kdyby/Aop/blob/master/docs/en/index.md#installation).
+
 Require the extension file using composer:
 
 ```sh
 $ composer require redhead/cached:@dev
 ```
 
-In you Nette application configuration, add the extension to be registeres and the aspect:
+In you Nette application configuration, add the extension to be registered and Kdyby\Aop aspect:
 
 ```
 extensions:
@@ -74,7 +77,7 @@ Annotation options are following:
 - key (string) - the key under which the return value is stored in the cache storage
 - profile (string) - the name of the cache profile to use, defaults to 'default' (see below)
 - expire (string) - specifies the time the cache will expire
-- sliding (boolean) - if the sliding feature be used
+- sliding (boolean) - if the sliding feature should be used
 - tags (array) - tags for clearing the cache
 - files (array) - the paths to files that will trigger the cache expiration when edited
 - priority (integer) - the priority number
@@ -97,7 +100,7 @@ cached:
       expire: +1 hour
 ```
 
-Then add property 'profile' with the name of the profile as a value to theadvised methods you want to 
+Then add annotation property 'profile' with the name of the profile as a value to the advised methods you want to 
 share the options with.
 
 ```
@@ -108,7 +111,61 @@ share the options with.
 ...
 ```
 
-You can set additional options or override the options of the profile by adding the properties to the annotation.
+You can set additional options and/or override the options of the profile by adding properties to the annotation.
 
 When no profile is specified, it defaults to profile 'default', which you can set in the configuration.
 The options for this profile will be used for every adviced method without property 'profile'.
+
+
+
+Profile options
+---------------
+
+Profile options have few differences from the annotation options. You can specify these options:
+- enabled (boolean) - if false, no caching is performed and the original method will get called every time (caching is completely disabled for this profile)
+- namespace (same as above)
+- expire (same as above)
+- sliding (same as above)
+- tags (same as above)
+- files (same as above)
+- priority (same as above)
+
+Profile options are missing 'key' and 'profile' annotation property counterparts (as they don't make any sense here).
+
+
+
+Extension options
+-----------------
+
+You can specify options for the whole extension in section 'cached':
+
+- enabled (boolean) - if false, caching is disabled for all annotations and profiles, no caching is performed at all.
+
+
+Configuration example
+---------------------
+
+Here is an example of the whole configuration setup and usage of every config option:
+
+
+```
+  extensions:
+  	aop: Kdyby\Aop\DI\AopExtension
+    	annotations: Kdyby\Annotations\DI\AnnotationsExtension
+  	cached: Cached\CachedExtension
+  
+  aspects:
+  	- Cached\CachingAspect
+  
+  cached:
+  	enabled: true
+  	profiles:
+  		default:
+  			expire: 1 hour
+  			sliding: true
+  			files: [file1.php, file2.php]
+  			tags: [tag1, tag2]
+  			priority: 1
+  		myProfile:
+  			...
+```
