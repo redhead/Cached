@@ -161,6 +161,8 @@ Here is an example of the whole configuration setup and usage of every config op
   	enabled: true
   	profiles:
   		default:
+  			enabled: true
+  			namespace: myNamespace
   			expire: 1 hour
   			sliding: true
   			files: [file1.php, file2.php]
