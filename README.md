@@ -13,7 +13,7 @@ Require the extension files using composer:
 $ composer require redhead/cached:@dev
 ```
 
-In you Nette application configuration, add the extension to be registered and the caching aspect:
+In your Nette application configuration, add the extension to be registered and the caching aspect:
 
 ```
 extensions:
@@ -98,7 +98,7 @@ cached:
 	profiles:
 		myProfile:
 			sliding: true
-      			expire: 1 hour
+			expire: 1 hour
 ```
 
 Then add annotation property 'profile' with the name of the profile as a value to the advised methods you want to 
